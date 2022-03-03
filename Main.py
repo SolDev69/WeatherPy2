@@ -25,13 +25,13 @@ def printData(r):
     printvalue = r.json()["name"] + " " + "Temperature = " + str(r.json()["main"]["temp"]) + "K " + str(kToF(r.json()["main"]["temp"])) + degree() + " " + str(kToC(r.json()["main"]["temp"])) + degree() + newLine() + "Feels like " + str(r.json()["main"]["feels_like"]) + "K " + str(kToF(r.json()["main"]["feels_like"])) + degree() + " " + str(kToC(r.json()["main"]["feels_like"])) + degree() + newLine() + "High " + str(r.json()["main"]["temp_max"]) + "K " + str(kToF(r.json()["main"]["temp_max"])) + degree() + " " + str(kToC(r.json()["main"]["temp_max"])) + degree() + newLine() + "Low " + str(r.json()["main"]["temp_min"]) + "K " + str(kToF(r.json()["main"]["temp_min"])) + degree() + " " + str(kToC(r.json()["main"]["temp_min"])) + degree() + newLine() + "ID " + str(r.json()["weather"][0]["id"]) + newLine() + "The weather now is " + str(r.json()["weather"][0]["description"]) + ", or " + str(r.json()["weather"][0]["main"]).lower() + dot() + newLine()
     print(printvalue)
     return r.json()["main"]["temp"]
-# def printData(r):
-    print("Raw data:")
-    print(r.json())
-    print()
-    printvalue = r.json()["name"] + " " + "Temperature = " + str(r.json()["main"]["temp"]) + "K " + str(kToF(r.json()["main"]["temp"])) + degree() + " " + str(kToC(r.json()["main"]["temp"])) + degree() + newLine() + "Feels like " + str(r.json()["main"]["feels_like"]) + "K " + str(kToF(r.json()["main"]["feels_like"])) + degree() + " " + str(kToC(r.json()["main"]["feels_like"])) + degree() + newLine() + "High " + str(r.json()["main"]["temp_max"]) + "K " + str(kToF(r.json()["main"]["temp_max"])) + degree() + " " + str(kToC(r.json()["main"]["temp_max"])) + degree() + newLine() + "Low " + str(r.json()["main"]["temp_min"]) + "K " + str(kToF(r.json()["main"]["temp_min"])) + degree() + " " + str(kToC(r.json()["main"]["temp_min"])) + degree() + newLine() + "ID " + str(r.json()["weather"][0]["id"]) + newLine() + "The weather now is " + str(r.json()["weather"][0]["description"]) + ", or " + str(r.json()["weather"][0]["main"]).lower() + dot() + newLine()
-    print(printvalue)
-    return r.json()["main"]["temp"]
+# def printData(r):  Old
+#     print("Raw data:")
+#     print(r.json())
+#     print()
+#     printvalue = r.json()["name"] + " " + "Temperature = " + str(r.json()["main"]["temp"]) + "K " + str(kToF(r.json()["main"]["temp"])) + degree() + " " + str(kToC(r.json()["main"]["temp"])) + degree() + newLine() + "Feels like " + str(r.json()["main"]["feels_like"]) + "K " + str(kToF(r.json()["main"]["feels_like"])) + degree() + " " + str(kToC(r.json()["main"]["feels_like"])) + degree() + newLine() + "High " + str(r.json()["main"]["temp_max"]) + "K " + str(kToF(r.json()["main"]["temp_max"])) + degree() + " " + str(kToC(r.json()["main"]["temp_max"])) + degree() + newLine() + "Low " + str(r.json()["main"]["temp_min"]) + "K " + str(kToF(r.json()["main"]["temp_min"])) + degree() + " " + str(kToC(r.json()["main"]["temp_min"])) + degree() + newLine() + "ID " + str(r.json()["weather"][0]["id"]) + newLine() + "The weather now is " + str(r.json()["weather"][0]["description"]) + ", or " + str(r.json()["weather"][0]["main"]).lower() + dot() + newLine()
+#     print(printvalue)
+#     return r.json()["main"]["temp"]
 
 def printDataLong(r):
     print()
