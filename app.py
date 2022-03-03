@@ -24,7 +24,8 @@ def printData(r):
     print()
     printvalue = r.json()["name"] + " " + "Temperature = " + str(r.json()["main"]["temp"]) + "K " + str(kToF(r.json()["main"]["temp"])) + degree() + " " + str(kToC(r.json()["main"]["temp"])) + degree() + newLine() + "Feels like " + str(r.json()["main"]["feels_like"]) + "K " + str(kToF(r.json()["main"]["feels_like"])) + degree() + " " + str(kToC(r.json()["main"]["feels_like"])) + degree() + newLine() + "High " + str(r.json()["main"]["temp_max"]) + "K " + str(kToF(r.json()["main"]["temp_max"])) + degree() + " " + str(kToC(r.json()["main"]["temp_max"])) + degree() + newLine() + "Low " + str(r.json()["main"]["temp_min"]) + "K " + str(kToF(r.json()["main"]["temp_min"])) + degree() + " " + str(kToC(r.json()["main"]["temp_min"])) + degree() + newLine() + "ID " + str(r.json()["weather"][0]["id"]) + newLine() + "The weather now is " + str(r.json()["weather"][0]["description"]) + ", or " + str(r.json()["weather"][0]["main"]).lower() + dot() + newLine()
     print(printvalue)
-    return r.json()["main"]["temp"]
+    return printvalue
+    #return r.json()["main"]["temp"]
 # def printData(r):  Old
 #     print("Raw data:")
 #     print(r.json())
@@ -44,7 +45,7 @@ def printDataLong(r):
             "It will be " + str(kToC(day["temp"]["day"])) + " in " + str(i) + "days"
         )
         i=i+1
-
+    #return r.json()["daily"]
 
 #Check if api key exists
 if(os.getenv("WEATHER_API_KEY") == None):
@@ -57,9 +58,10 @@ def weathergetLongTerm(j):
     lon = j.json()["coord"]["lon"]
     ln = "https://api.openweathermap.org/data/2.5/onecall?lat=" + str(lat) + "&lon=" + str(lon) + "&appid=" + os.getenv("WEATHER_API_KEY")
     s = requests.get(ln)
-    print(ln)
-    print(s.json())
-    printDataLong(s)
+    #print(ln)
+    #print(s.json())
+    #printDataLong(s)
+    return s.json()["daily"]
 # Main function
 def weatherget(uszipcode):
     r = requests.get("https://api.openweathermap.org/data/2.5/weather?zip="+uszipcode+",us&appid=" + os.getenv("WEATHER_API_KEY"))
