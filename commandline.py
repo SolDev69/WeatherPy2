@@ -1,4 +1,4 @@
-from Main import init, command_line, runCommandLine
+from app import init, command_line, runCommandLine
 
 
 runCommandLine()
